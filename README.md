@@ -1,6 +1,6 @@
 # ng2-HanoiTower
 A graphical interface to Tower of Hanoi mathematical problem made with angular 2
-
+<img src="https://github.com/fssAlbertoLuis/ng2-HanoiTower/blob/master/src/assets/sampleimg.png?raw=true"/>
 Project done during web development uni classes. The application connects with
 a simple web service which provides the solution to be rendered in this app.
 
