@@ -1,0 +1,46 @@
+/*
+ * This file is part of the ng2-HanoiTower project.
+ *
+ * (c) 2018 Luis Alberto <albertoluis0108@gmail.com>
+ * https://github.com/fssAlbertoLuis/ng2-HanoiTower
+ * 
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+.hanoi-div {
+  display: flex;
+}
+
+.hanoi-div .peg {
+  padding: 2em;
+  margin: auto;
+  position: relative;
+}
+
+.hanoi-div .disc {
+  border-radius: .4em;
+  text-align: center;
+}
+
+.estado-div {
+  text-align: center;
+  padding: 1em;
+  font-size: 1.6em;
+}
+
+.estado-div b {
+  padding: .5em;
+  background: #d6d6d6;
+  border-radius: .3em;
+}
+
+.estado-div button {
+  padding: .5em;
+  margin: .5em 1em;
+  bottom: .2em;
+}
+
+md-toolbar {
+  padding: .5em;
+}

@@ -1,0 +1,57 @@
+<!--
+ * This file is part of the ng2-HanoiTower project.
+*
+* (c) 2018 Luis Alberto <albertoluis0108@gmail.com>
+* https://github.com/fssAlbertoLuis/ng2-HanoiTower
+* 
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/-->
+
+<div drag-scroll class="sub-body">
+  <md-toolbar color="primary">
+    <h2 *ngIf="calculating">
+      <md-icon class="material-icons sys-md-icon">info</md-icon>
+      Calculating with {{ndiscs}} discs...
+    </h2>
+    <h2 *ngIf="!calculating">
+      <md-icon class="material-icons sys-md-icon">check_circle</md-icon>
+      Solution provided.
+    </h2>
+    <span class="fill-space"></span>
+    <h3 class="sys-md-icon">
+      Movements: {{counting}}
+    </h3>
+  </md-toolbar>
+  <md-progress-bar class="example-margin" color="accent" [mode]="determinate" [value]="percent | number : '1.0-0'" [bufferValue]="100">
+  </md-progress-bar>
+
+  <div counto [step]="10" [countTo]="100" [countFrom]="0" *ngIf="!manual" [duration]="duration" (countoChange)="percent = $event">{{percent | number : '1.0-0'}}%</div>
+  <div class="estado-div" *ngIf="state">
+    <button md-raised-button color="accent" *ngIf="manual" (click)="calculateStep()" [disabled]="!calculating">
+      Next state
+      <md-icon class="material-icons sys-md-icon">fast_forward</md-icon>
+    </button>
+    <b>State: {{state}}</b>
+  </div>
+  <div class="hanoi-div">
+    <div class="peg peg_1">
+      <img src="../assets/peg.png" width="200" height="200" />
+      <div class="disc" *ngFor="let disc of pines[0]" [ngStyle]="disc">
+        {{disc.size}}
+      </div>
+    </div>
+    <div class="peg peg_2">
+      <img src="../assets/peg.png" width="200" height="200" />
+      <div class="disc" *ngFor="let disc of pines[1]" [ngStyle]="disc">
+        {{disc.size}}
+      </div>
+    </div>
+    <div class="peg peg_3">
+      <img src="../assets/peg.png" width="200" height="200" />
+      <div class="disc" *ngFor="let disc of pines[2]" [ngStyle]="disc">
+        {{disc.size}}
+      </div>
+    </div>
+  </div>
+</div>

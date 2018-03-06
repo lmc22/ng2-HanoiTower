@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+  margin:0;
+  padding:0;
+}
+
+.fill-space {
+  flex: 1 1 auto;
+}
+
+.sys-input-container {
+  padding:.0em 1em;
+}
+
+.sys-md-icon {
+  fill: currentColor;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 1;
+}

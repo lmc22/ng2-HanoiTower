@@ -8,13 +8,8 @@
  * file that was distributed with this source code.
  */
 
- import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  template: `
-    <router-outlet></router-outlet>
-  `,
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {}
+ export class Hanoi {
+  size: number;
+  width: number;
+  color: string;
+}

@@ -1,0 +1,50 @@
+<!--
+ * This file is part of the ng2-HanoiTower project.
+*
+* (c) 2018 Luis Alberto <albertoluis0108@gmail.com>
+* https://github.com/fssAlbertoLuis/ng2-HanoiTower
+* 
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/-->
+
+<md-toolbar class="mat-elevation-z1 flex">
+  <div class="form-body">
+    <md-select placeholder="Select number of discs" [(ngModel)]="discs">
+      <md-option *ngFor="let discs of [3,4,5,6,7,8,9,10]" [value]="discs">
+        {{ discs }} discs
+      </md-option>
+    </md-select>
+    <md-select placeholder="Mode" [(ngModel)]="mode">
+      <md-option value="auto">Automatic</md-option>
+      <md-option value="manual">step by step</md-option>
+    </md-select>
+    <button md-raised-button color="primary" (click)="calculate(discs,mode)">Calcular</button>
+    <button md-raised-button color="accent" (click)="reset()">Resetar</button>
+    <button md-button *ngIf="error" style="display: inline-block" [disabled]="true">
+      <md-icon class="material-icons sys-md-icon" style="color: red">
+        warning
+      </md-icon>
+      <span style="color: red;"><b>Connection error, or wrong data sent to webservice...</b></span>
+    </button>
+  </div>
+  <div class="fill-space"></div>
+</md-toolbar>
+<div class="main-body mat-elevation-z1 mat-typography">
+  <md-toolbar color="primary" *ngIf="!hanoi">
+    <h2>
+      <md-icon class="material-icons sys-md-icon">play_arrow</md-icon> the number of discs to calculate: </h2>
+  </md-toolbar>
+  <div class="hanoi-div" *ngIf="!hanoi">
+    <div class="peg peg_1">
+      <img src="../assets/peg.png" width="200" height="200" />
+    </div>
+    <div class="peg peg_2">
+      <img src="../assets/peg.png" width="200" height="200" />
+    </div>
+    <div class="peg peg_3">
+      <img src="../assets/peg.png" width="200" height="200" />
+    </div>
+  </div>
+  <hanoi *ngIf="calculating && mode && hanoi && discs" [mov]="hanoi" [ndiscs]="discs" [mode]="mode"></hanoi>
+</div>
